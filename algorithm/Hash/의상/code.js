@@ -7,5 +7,5 @@ function solution(clothes) {
     for(let clothNum of myMap.values())
         clothNums.push(clothNum+1);
     
-    return (clothNums.reduce((acc, cur)=> acc * cur))-1;
+    return (clothNums.reduce((acc, cur)=> acc * cur, 1))-1;
 }
