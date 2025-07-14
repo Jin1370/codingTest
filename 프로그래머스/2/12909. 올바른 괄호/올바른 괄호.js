@@ -1,6 +1,5 @@
 function solution(s){
     let num=0;
-    s = s.split("");
     for(x of s){
         if(x==='(')
             num++;
