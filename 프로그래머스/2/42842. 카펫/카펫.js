@@ -1,5 +1,4 @@
 function solution(brown, yellow) {
-    let divisor = [];
     numOfTile = brown + yellow;
     
     for(let i=numOfTile;i>0;i--){
