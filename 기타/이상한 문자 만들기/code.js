@@ -9,7 +9,7 @@
 //             i--;
 //             continue;
 //         }
-//         if(s[i+1]){
+//         if(s[i+1] && s[i+1]!==" "){
 //             s[i+1] = s[i+1].toLowerCase();
 //         }
 //     }
