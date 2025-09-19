@@ -1,11 +1,13 @@
 function solution(n) {
-
-    let answer = 0;
-
-    for (let k = 1; k * (k + 1) / 2 <= n; k++) {
-        if ((n - (k * (k - 1)) / 2) % k === 0) {
-            answer++;
+    var answer = 0;
+    
+    for(let i=1;i<=n;i++){
+        let sum = 0;
+        let digit = i;
+        while(sum<n){
+            sum += digit++;
         }
+        if(sum===n) answer++;
     }
     return answer;
 }
