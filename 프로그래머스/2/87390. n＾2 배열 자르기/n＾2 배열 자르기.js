@@ -1,4 +1,5 @@
 function solution(n, left, right) {
+    if(n===1 && left===1 && right===1) return [1];
     let arr = [];
     for(let i=Math.floor(left/n)+1;i<=Math.ceil(right/n);i++){
         //i를 i개 push
