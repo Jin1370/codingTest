@@ -37,10 +37,10 @@ function solution(s) {
 // function solution(s) {
 //     return JSON.parse(s.replace(/{/g, '[').replace(/}/g, ']'))
 //     .sort((a, b) => a.length - b.length)
-//     .reduce((arr, v, n) => {
-//         if (n) {
-//             return arr.concat(v.filter(f => !arr.includes(f)));
+//     .reduce((tuple, subset, idx) => {
+//         if (idx) {
+//             return tuple.concat(subset.filter(f => !tuple.includes(f)));
 //         }
-//         return v;
+//         return subset;
 //     }, []);
 // }
