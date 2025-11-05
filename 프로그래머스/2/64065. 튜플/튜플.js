@@ -1,8 +1,8 @@
 function solution(s) {
+    //문자열 배열로 변환
     let subsets = [];
     let idx = -1;
     let num = 0;
-    let tuple = []
     s = s.slice(1, -1) + ',';
     for(let ch of s){
         if(ch === '{'){
@@ -15,10 +15,13 @@ function solution(s) {
             num = num * 10 + Number(ch);
         }
     }
-    subsets.sort((a, b)=>a.length - b.length);
-    //console.log(arr);
     
+    //부분집합 크기 기준 오름차순 정렬
+    subsets.sort((a, b)=>a.length - b.length);
+    
+    //각각의 부분집합에서 중복되지 않는 원소 고르기
     const mySet = new Set();
+    let tuple = [];
     subsets.forEach(subset => {
         subset.forEach(num => {
             if(!mySet.has(num)){
