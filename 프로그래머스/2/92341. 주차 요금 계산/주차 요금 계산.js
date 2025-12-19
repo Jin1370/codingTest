@@ -1,8 +1,5 @@
 function solution(fees, records) {
-    const basicTime = fees[0];
-    const basicFare = fees[1];
-    const unitTime = fees[2];
-    const unitFare = fees[3];
+    const [basicTime, basicFare, unitTime, unitFare] = fees;
     const myMap = new Map();
     let answer = [];
     
