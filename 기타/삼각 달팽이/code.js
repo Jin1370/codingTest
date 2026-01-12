@@ -26,8 +26,6 @@ function solution(n) {
         }
         repeat--;
     }
-    const answer = [];
-    arr.forEach(x => answer.push(...x));
-    
-    return(answer);
+
+    return arr.flat();
 }
