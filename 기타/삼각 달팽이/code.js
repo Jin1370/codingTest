@@ -7,25 +7,18 @@ function solution(n) {
     
     while(repeat>0){
         for(let j=0;j<repeat;j++){
-            row++;
-            arr[row][col] = num;
-            num++;
+            arr[++row][col] = num++;
         }
         repeat--;
         for(let j=0;j<repeat;j++){
-            col++;
-            arr[row][col] = num;
-            num++;
+            arr[row][++col] = num++;
         }
         repeat--;
         for(let j=0;j<repeat;j++){
-            row--;
-            col--;
-            arr[row][col] = num;
-            num++;
+            arr[--row][--col] = num++;
         }
         repeat--;
     }
-
-    return arr.flat();
+    
+    return(arr.flat());
 }
