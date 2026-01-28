@@ -1,37 +1,14 @@
 function solution(arrayA, arrayB) {
-    function findGCD(array){
-        while(array.length){
-            array.sort((a,b)=>b-a);
-            while(array[array.length-1]===0){
-                array.pop();
-            }
-            if(array.length===1) return array[0];
-            for(let i=0;i<array.length-1;i++){
-                array[i] %= array[array.length-1]; 
-            }
-        }
-    }
-    
-    let gcd_A = findGCD(arrayA.slice());
-    let gcd_B = findGCD(arrayB.slice());
+    const aResult = getAnswer(arrayA, arrayB)
+    const bResult = getAnswer(arrayB, arrayA)
 
-    let divided = false;
-    for(let elem of arrayB){
-        if(elem % gcd_A === 0){
-            divided = true;
-            break;
-        }
+    return aResult > bResult ? aResult : bResult
+}
+
+function getAnswer (A, B) {
+    A.sort((a, b) => a - b)
+    for (let i = A[0]; i > 1; i--) {
+        if (A.every(a => a % i === 0) && !B.some(b => b % i === 0)) return i
     }
-    if(divided) gcd_A=0;
-        
-    divided = false;
-    for(let elem of arrayA){
-        if(elem % gcd_B === 0){
-            divided = true;
-            break;
-        }
-    }
-    if(divided) gcd_B=0;
-    
-    return Math.max(gcd_A, gcd_B);
+    return 0
 }
