@@ -23,16 +23,11 @@ function solution(m, musicinfos) {
                                         .substring(0, duration);
 
         if (fullMelody.includes(targetMelody)) {
-            answerCandidates.push({ title, duration, index: i });
+            answerCandidates.push({ title, duration });
         }
     }
 
     if (answerCandidates.length === 0) return "(None)";
-
-    answerCandidates.sort((a, b) => {
-        if (b.duration !== a.duration) return b.duration - a.duration;
-        return a.index - b.index;
-    });
-
+    answerCandidates.sort((a, b) => b.duration - a.duration);
     return answerCandidates[0].title;
 }
